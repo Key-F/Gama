@@ -13,19 +13,23 @@ public class BallControlCSharp : MonoBehaviour {
     {      
         if (Input.GetKey("w"))
         {
-            rb.AddForce(0, speed * Time.deltaTime, 0);
+            //rb.AddForce(0, speed * Time.deltaTime, 0);
+            rb.velocity = Vector2.up * speed;
         }
         if (Input.GetKey("a"))
         {
-            rb.AddForce(-speed * Time.deltaTime, 0, 0);
+            //rb.AddForce(-speed * Time.deltaTime, 0, 0);
+            rb.velocity = Vector2.left * speed;
         }
         if (Input.GetKey("d"))
         {
-            rb.AddForce(speed * Time.deltaTime, 0, 0);
+            //rb.AddForce(speed * Time.deltaTime, 0, 0);
+            rb.velocity = Vector2.right * speed;
         }
         if (Input.GetKey("s"))
         {
-            rb.AddForce(0, -speed * Time.deltaTime, 0);
+            //rb.AddForce(0, -speed * Time.deltaTime, 0);
+            rb.velocity = Vector2.down * speed;
         }
     }
        
