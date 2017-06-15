@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallCollision : MonoBehaviour {
 
@@ -9,7 +8,10 @@ public class BallCollision : MonoBehaviour {
         if (collInfo.collider.tag == "EvilWall")
         {
             //Debug.Log("pizda nam");
-            Application.LoadLevel("Lvl1");
+            //Application.LoadLevel("Lvl1");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GuimMuniger.currentScore = 0;
+
         }
     
     }
