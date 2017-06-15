@@ -12,6 +12,7 @@ public class BallCollision : MonoBehaviour {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             GuimMuniger.currentScore = 0;
 
+
         }
     
     }
