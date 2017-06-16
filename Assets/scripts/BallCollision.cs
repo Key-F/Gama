@@ -11,10 +11,13 @@ public class BallCollision : MonoBehaviour {
             //Application.LoadLevel("Lvl1");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             GuimMuniger.currentScore = 0;
-
-
         }
-    
+        if (collInfo.collider.tag == "EndLvl")
+        {
+            Debug.Log("go otsuda");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);           
+        }
+
     }
 
 
