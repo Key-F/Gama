@@ -7,13 +7,15 @@ public class MovingBlock : MonoBehaviour {
     public Rigidbody rb;
     public float speed = 10;
     bool goUp = true;
+    public float toppoint = 12;
+    public float botpoint = 3;
 
-    void Update () {
+    void FixedUpdate () {
         
         if (goUp)
         {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-            if (transform.position.y > 12)
+            transform.Translate(Vector3.right * speed * Time.fixedDeltaTime);
+            if (transform.position.y > toppoint)
             {
                 goUp = false;
                 return;
@@ -21,8 +23,8 @@ public class MovingBlock : MonoBehaviour {
         }
         if (!goUp)
         {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-            if (transform.position.y < 3)
+            transform.Translate(Vector3.left * speed * Time.fixedDeltaTime);
+            if (transform.position.y < botpoint)
             {
                 goUp = true;
                 return;
