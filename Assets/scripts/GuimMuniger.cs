@@ -5,10 +5,20 @@ public class GuimMuniger : MonoBehaviour {
 
     public static int currentScore = 0;
     public Text scoreText;
-	// Use this for initialization
+    bool gameHasEnded = false;
 	
-	// Update is called once per frame
 	void Update () {
         scoreText.text = currentScore.ToString();
 	}
+
+    public void EndGame()
+    {
+        if (gameHasEnded == false)
+        {
+            gameHasEnded = true;
+        }
+    }
+
+    
 }
+
