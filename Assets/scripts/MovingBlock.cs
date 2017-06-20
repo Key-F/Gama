@@ -9,13 +9,17 @@ public class MovingBlock : MonoBehaviour {
     bool goUp = true;
     public float toppoint = 12;
     public float botpoint = 3;
+    public float rightpoint = 8;
+    public float leftpoint = 4;
+    public Vector3 firstdir = new Vector3(1, 0, 0);
+    public Vector3 secondtdir = new Vector3(-1, 0, 0);
+    public bool horizontal = true;
 
     void FixedUpdate () {
-        
         if (goUp)
         {
-            transform.Translate(Vector3.right * speed * Time.fixedDeltaTime);
-            if (transform.position.y > toppoint)
+            transform.Translate(firstdir * speed * Time.fixedDeltaTime);
+            if ((!horizontal) && (transform.position.y > toppoint) || (transform.position.x > rightpoint))
             {
                 goUp = false;
                 return;
@@ -23,8 +27,8 @@ public class MovingBlock : MonoBehaviour {
         }
         if (!goUp)
         {
-            transform.Translate(Vector3.left * speed * Time.fixedDeltaTime);
-            if (transform.position.y < botpoint)
+            transform.Translate(secondtdir * speed * Time.fixedDeltaTime);
+            if ((!horizontal) && (transform.position.y < botpoint) || (transform.position.x < leftpoint))
             {
                 goUp = true;
                 return;
