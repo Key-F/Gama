@@ -7,16 +7,18 @@ public class BallCollision : MonoBehaviour {
     {
         if (collInfo.collider.tag == "EvilWall")
         {
-            //Debug.Log("pizda nam");
-            //Application.LoadLevel("Lvl1");
+            Debug.Log("pizda nam");
+            //Application.LoadLevel("Lvl1");           
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            GuimMuniger.currentScore = 0;
+            GuimMuniger.currentScore -= 1;
         }
+
         if (collInfo.collider.name == "EndGame")
         {
             Debug.Log("");
             SceneManager.LoadScene("End");
         }
+
         if (collInfo.collider.tag == "EndLvl")
         {
             Debug.Log("go otsuda");

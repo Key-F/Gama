@@ -1,5 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GuimMuniger : MonoBehaviour {
 
@@ -8,8 +9,11 @@ public class GuimMuniger : MonoBehaviour {
     bool gameHasEnded = false;
 	
 	void Update () {
-        scoreText.text = currentScore.ToString();
-	}
+        if (currentScore < 0)
+            SceneManager.LoadScene("End");
+        else
+        scoreText.text = currentScore.ToString();        
+    }
 
     public void EndGame()
     {

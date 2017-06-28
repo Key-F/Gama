@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour {
@@ -8,5 +7,6 @@ public class Restart : MonoBehaviour {
 	public void RestartGame()
     {
         SceneManager.LoadScene("Lvl1");
+        GuimMuniger.currentScore = 0;
     }
 }
