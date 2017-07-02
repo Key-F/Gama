@@ -5,10 +5,11 @@ public class BallControlCSharp : MonoBehaviour {
     public int speed = 500;
     public int sndspeed = 2000;
     public Rigidbody rb;
+    public static bool KeyPressed = false;
     public bool AddForce = false; // Тип движения
     public static  bool hardcore = true; // Монеты не обновляются
     private bool KeyPressedAtStart = false;
-
+  
     
     void FixedUpdate()
     {
@@ -24,6 +25,9 @@ public class BallControlCSharp : MonoBehaviour {
         }
         else 
         { */
+        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("d") || Input.GetKey("s"))
+            KeyPressed = true;
+        else KeyPressed = false;
             if (Input.GetKey("w"))
             {
                 //AddForce == true ? rb.AddForce(0, sndspeed * Time.deltaTime, 0) : rb.velocity = Vector2.up * speed;

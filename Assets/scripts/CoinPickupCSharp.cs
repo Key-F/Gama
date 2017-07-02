@@ -15,7 +15,7 @@ public class CoinPickupCSharp : MonoBehaviour {
 
     }
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         transform.Rotate(Vector3.up * CoinRotationSpeed);
     }
 }
